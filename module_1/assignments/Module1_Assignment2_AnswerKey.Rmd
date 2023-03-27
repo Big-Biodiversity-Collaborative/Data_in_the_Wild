@@ -1,0 +1,91 @@
+---
+title: 'Module 1, Assignment 2: Answer Key'
+author: "Ellen Bledsoe"
+date: "2023-01-24"
+output: pdf_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+```{r vector}
+# vector with counts of penguins
+counts <- c(2, 9, 4, 3, 6, 7, 1, 0, 3)
+```
+
+
+1. 
+```{r data_class}
+# data class for counts
+class(counts)
+```
+
+2. 
+```{r second_value}
+# second value of counts vector
+counts[2]
+```
+
+3. 
+```{r avg_penguins}
+# mean number of penguins
+mean(counts)
+```
+
+
+```{r import_data}
+library(tidyverse)
+team_data <- read_csv("../data/team_antarctica_responses.csv") %>% drop_na()
+```
+
+4. 
+```{r examine_data}
+head(team_data, 10)
+```
+
+5. 
+```{r}
+team_data[9, 7]
+```
+
+
+6. 
+```{r average_cold_tolerance}
+mean(team_data$cold_tolerance)
+```
+
+7. 
+```{r min_max_distance}
+# minimum distance
+min(team_data$distance_mi)
+
+# maximum distance
+max(team_data$distance_mi)
+```
+
+8.
+```{r cooking_skill}
+team_data[team_data$cooking_skill == 5, ]
+```
+
+
+9. 
+
+```{r parka_colors}
+# 9a
+colors <- unique(team_data$parka_color)
+colors
+
+#9b
+length(colors)
+```
+
+Bonus
+```{r flag_mascot}
+# UA data frame
+mascot <- team_data$flag_mascot
+# mascot count
+table(mascot)
+```
+
