@@ -1,0 +1,70 @@
+---
+title: "Module 2, Assignment 3"
+author: "Ellen Bledsoe"
+date: "2023-02-23"
+output:
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+    ```{r message=FALSE}
+    library(palmerpenguins)
+    library(tidyverse)
+    ```
+
+### REMINDER: Because I'm having you choose your own variables, the examples in the provided Answer Key likely will not match yours (though they might). You should strive to produce a plot that looks *similar in style* to those in the Answer Key, but the number of categories and the actual data points will likely be different.
+
+
+3.  
+
+```{r warning=FALSE, message=FALSE, fig.width=5, fig.height=4}
+ggplot(penguins, aes(bill_depth_mm)) +
+  geom_histogram(bins = 20) +
+  labs(x = "Descriptive Axis Label",
+       y = "Descriptive Axis Label") +
+  theme_bw()
+```
+
+4.  
+
+```{r warning=FALSE, message=FALSE, fig.width=6, fig.height=4}
+ggplot(penguins, aes(body_mass_g, color = island, fill = island)) +
+  geom_density(alpha = 0.5) +
+  labs(x = "Descriptive Axis Label",
+       y = "Descriptive Axis Label",
+       color = "Legend Label",
+       fill = "Capitalized Label") +
+  scale_fill_discrete(labels = c("[redacted]", "[redacted]", "[redacted]")) +
+  scale_color_discrete(labels = c("[redacted]", "[redacted]", "[redacted]")) +
+  theme_bw()
+```
+
+5.  
+
+```{r warning=FALSE, message=FALSE, fig.width=6, fig.height=4}
+ggplot(penguins, aes(species, flipper_length_mm, color = species)) +
+  geom_boxplot() +
+  geom_jitter(alpha = 0.5, width = 0.1) +
+  labs(x = "Descriptive Axis Label",
+       y = "Descriptive Axis Label",
+       color = "Capitalized Label") +
+  scale_x_discrete(labels = c("[redacted]", "[redacted]", "[redacted]")) +
+  scale_color_discrete(labels = c("[redacted]", "[redacted]", "[redacted]")) +
+  theme_classic()
+```
+
+6.
+
+```{r warning=FALSE, message=FALSE, fig.width=6, fig.height=4}
+ggplot(penguins, aes(bill_length_mm, bill_depth_mm, color = island)) +
+  geom_point() +
+  labs(x = "Descriptive Axis Label",
+       y = "Descriptive Axis Label",
+       color = "Capitalized Label") +
+  scale_color_discrete(labels = c("[redacted]", "[redacted]", "[redacted]")) +
+  theme_light()
+```
+

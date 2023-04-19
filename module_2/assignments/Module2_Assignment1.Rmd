@@ -1,0 +1,101 @@
+---
+title: "Module 2, Assignment 1"
+author: "Ellen Bledsoe"
+date: "2023-02-20"
+output:
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Assignment Details
+
+### Purpose
+
+The goal of this assignment is to assess your ability to produce and interpret histograms and scatter plots.
+
+### Task
+
+Write R code which produces the correct answers and correctly interpret the plots produced.
+
+### Criteria for Success
+
+-   Code is within the provided code chunks
+-   Code is commented with brief descriptions of what the code does
+-   Code chunks run without errors
+-   Code produces the correct result
+    -   Code that produces the correct answer will receive full credit
+    -   Code attempts with logical direction will receive partial credit
+-   Written answers address the questions in sufficient detail
+
+### Due Date
+
+March 2 at midnight MST
+
+# Assignment Questions
+
+For this assignment, we are going to be making plots! We are going to use a data set called `penguins` from the `palmerpenguins` package.
+
+1.  Load both the `palmerpenguins` package and the `tidyverse` package into the work space. (2 points)
+
+    ```{r}
+
+    ```
+
+------------------------------------------------------------------------
+
+#### OPTIONAL
+
+When we use data from a data package, it doesn't automatically show up in our environment. Run this code chunk so it does show up in the environment.
+
+```{r}
+penguins <- penguins
+```
+
+------------------------------------------------------------------------
+
+2.  Use the `head()` function to take a look at the `penguins` data frame. (1 points)
+
+    ```{r}
+
+    ```
+
+3.  Make a histogram of the body mass column. You can use either base R or `ggplot2`. No need to change the labels, add a theme, etc. The basic plot is fine. (2 points)
+
+    ```{r}
+    # if you use ggplot2, you will get some warnings, but it should still make a plot
+
+    ```
+
+4.  In 2-3 sentences, describe what the histogram is telling you. I'm not necessarily looking for technical answers, but I want you to practice interpreting what histograms are telling you. (Examples: Are there even numbers of each body mass or different? Where is the peak? Are there lots of heavy penguins or not?) (3 points)
+
+    *Answer:*
+
+5.  Now that we have plotted the data in the histogram, let's calculate some descriptive statistics for penguin body masses. Calculate the mean and the standard deviation. (2 points)
+
+    Hint: remember to use `na.rm = T` in the mean and standard deviation functions!
+
+    ```{r}
+
+    ```
+
+6.  Now, let's make a scatter plot with flipper length on the x-axis (horizontal) and bill length on the y-axis (vertical). Again, you can use either base R or `ggplot2`. No need to change the labels, add a theme, etc. The basic plot is fine. (2 points)
+
+    ```{r}
+    # if you use ggplot2, you will get some warnings, but it should still make a plot
+
+    ```
+
+7.  Write 1-2 sentences interpreting this plot. (Examples: Is there a positive relationship or a negative relationship? As flipper length increases, does bill length tend to increase, decrease, or stay the same? Is a penguin with a long flipper likely to have a long bill, too?) (3 points)
+
+    *Answer:*
+
+8.  Calculate descriptive statistics (mean and standard deviation) for both variables (flipper length and bill length). (2 points)
+
+    ```{r}
+
+    ```
+
+9.  Write 3-4 sentences explaining the importance of data visualization and also explain brainstorming what we might be missing. What have you gathered from the plots that you don't know from the summary statistics and vice-versa? What additional data would we maybe want to add to the plots to get a better understanding of our data? (3 points)

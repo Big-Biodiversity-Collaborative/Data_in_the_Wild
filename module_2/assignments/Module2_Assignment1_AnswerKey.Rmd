@@ -1,0 +1,56 @@
+---
+title: "Module 2, Assignment 1"
+subtitle: "Answer Key"
+author: "Ellen Bledsoe"
+output:
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, fig_crop = FALSE)
+```
+
+
+```{r message = FALSE}
+library(palmerpenguins)
+library(tidyverse)
+```
+
+2. 
+
+```{r}
+head(penguins)
+```
+
+3.
+```{r, fig.height = 4, fig.width = 5}
+# I used ggplot2 to make the answer key.
+# If you used base R, that's fine! The plots will just look a little bit different but should be showing the same data
+ggplot(penguins, aes(body_mass_g)) +
+  geom_histogram()
+```
+
+5. 
+```{r}
+penguins %>% summarize(mean_body_mass = mean(body_mass_g, na.rm = TRUE),
+                       sd_body_mass = sd(body_mass_g, na.rm = TRUE))
+```
+
+
+6.  
+
+```{r, fig.height = 4, fig.width = 5}
+ggplot(penguins, aes(flipper_length_mm, bill_length_mm)) +
+  geom_point()
+```
+
+
+8.  
+
+```{r}
+penguins %>% 
+  summarise(mean_flipper_length = mean(flipper_length_mm, na.rm = TRUE),
+        sd_flipper_length = sd(flipper_length_mm, na.rm = TRUE),
+        mean_bill_length = mean(bill_length_mm, na.rm = TRUE),
+        sd_bill_length = sd(bill_length_mm, na.rm = TRUE))
+```
