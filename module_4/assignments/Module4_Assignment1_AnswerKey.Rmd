@@ -1,0 +1,114 @@
+---
+title: "Module 4 Assignment 1"
+author: "Ellen Bledsoe"
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+```{r message = FALSE}
+library("tidyverse")
+hairgrass <- read_csv("../data/hairgrass_data.csv")
+```
+
+
+1.  
+
+```{r}
+hairgrass %>% 
+  summarize(mean_P = mean(p_content), 
+            stdev_P = sd(p_content))
+```
+
+
+3. 
+
+```{r}
+ggplot(hairgrass, aes(x = p_content, y = hairgrass_density_m2)) +
+  geom_point() +
+  labs(x = "Phosphorus Content",
+      y = "Hair Grass Density (m^2)") +
+  theme_classic()
+```
+
+
+5.  
+
+```{r}
+r <- cor(y = hairgrass$hairgrass_density_m2, x = hairgrass$p_content)
+r
+```
+
+6.  
+
+```{r}
+r^2 
+```
+
+
+8.  
+
+```{r}
+hairgrass %>% 
+  ggplot(aes(x = p_content, y = hairgrass_density_m2)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  ylab("Hairgrass Density (m^2)") +
+  xlab("Phosphorus Content") +
+  theme_classic()
+```
+
+9. 
+
+```{r}
+mod <- lm(hairgrass$hairgrass_density_m2 ~ hairgrass$p_content)
+summary(mod) 
+```
+
+
+
+12. 
+```{r}
+ggplot(hairgrass, aes(x = avg_summer_temp, y = hairgrass_density_m2)) +
+  geom_point() +
+  labs(x = "Average Summer Temperature (F)",
+       y = "Hairgrass Density (m^2)") +
+  theme_bw()
+```
+
+
+14. 
+
+```{r}
+r <- cor(y = hairgrass$hairgrass_density_m2, x = hairgrass$avg_summer_temp)
+r
+```
+
+15. 
+
+```{r}
+r^2 
+```
+
+
+16. 
+```{r}
+ggplot(hairgrass, aes(x = avg_summer_temp, y = hairgrass_density_m2)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  ylab("Hairgrass Density (m^2)") +
+  xlab("Average Summer Temperature (F)") +
+  theme_bw()
+```
+
+17. 
+
+```{r}
+mod <- lm(hairgrass$hairgrass_density_m2 ~ hairgrass$avg_summer_temp)
+summary(mod) 
+```
+
